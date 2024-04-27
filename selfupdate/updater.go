@@ -79,6 +79,7 @@ func New(config Config) (*Updater, error) {
 		repo:           config.Repo,
 		filter: cmp.Or(config.Filter, &Filter{
 			Template: "{{.Name}}-{{.Version}}-{{.OS}}-{{.Arch}}",
+			Values:   make(map[string]string),
 		}),
 	}, nil
 }
